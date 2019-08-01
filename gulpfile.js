@@ -11,22 +11,22 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 
-gulp.task('concat', function() {
-  return gulp.src('./dist/radio-custom-element/*.js')
+gulp.task('concat', function () {
+  return gulp.src('./dist/rating-custom-element/*.js')
     .pipe(concat('rating.js'))
     .pipe(gulp.dest('./dist/element'));
 });
 
-gulp.task('rename', function() {
-  return gulp.src('./dist/radio-custom-element/*.css')
+gulp.task('rename', function () {
+  return gulp.src('./dist/rating-custom-element/*.css')
     .pipe(rename('rating.css'))
     .pipe(gulp.dest('./dist/element'));
 });
 
 // Fonts
-gulp.task('fonts', function() {
-    return gulp.src(['./dist/radio-custom-element/fontawesome-webfont.*'])
-            .pipe(gulp.dest('./dist/element'));
+gulp.task('fonts', function () {
+  return gulp.src(['./dist/rating-custom-element/fontawesome-webfont.*'])
+    .pipe(gulp.dest('./dist/element'));
 });
 
 gulp.task('default', gulp.series('concat', 'rename', 'fonts'));
